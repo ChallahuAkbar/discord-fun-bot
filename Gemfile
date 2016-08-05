@@ -2,3 +2,5 @@
 source 'https://rubygems.org'
 
 gem 'discordrb', '~> 2.1'
+
+gem 'koala',     '~> 2.4'

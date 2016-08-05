@@ -1,0 +1,8 @@
+
+AllCops:
+  DisplayStyleGuide: true
+  TargetRubyVersion: 2.3
+
+# Commented out because of rubocop bug, uncomment when generating todo file
+Metrics/LineLength:
+  Max: 100
