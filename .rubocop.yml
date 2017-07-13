@@ -1,7 +1,7 @@
 
 AllCops:
   DisplayStyleGuide: true
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.4
 
 # Commented out because of rubocop bug, uncomment when generating todo file
 Metrics/LineLength:
