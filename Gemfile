@@ -1,6 +1,9 @@
 # frozen_string_literal: true
+
 source 'https://rubygems.org'
 
-gem 'discordrb', '~> 2.1'
+gem 'discordrb', '~> 3.0'
 
-gem 'koala',     '~> 2.4'
+group :development do
+  gem 'rubocop', '~> 0.49', require: false
+end

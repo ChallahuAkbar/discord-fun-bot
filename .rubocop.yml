@@ -6,3 +6,6 @@ AllCops:
 # Commented out because of rubocop bug, uncomment when generating todo file
 Metrics/LineLength:
   Max: 100
+
+Style/NumericLiterals:
+  Enabled: false
