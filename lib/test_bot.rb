@@ -15,13 +15,14 @@ bot.message_delete do |event|
   event.respond('***CENSORSHIP!!!!!!!***')
 end
 
-bot.message(contains('time test')) do |event|
-  # if Time.now.minute.zero?
-    bot.voice_connect('General')
+bot.heartbeat do |_event|
+  if Time.now.min.zero?
+    bot.voice_connect(97268125656940544)
     Time.now.hour.times do
-      event.voice.play_io(open('https://retired.sounddogs.com/previews/25/mp3/307523_SOUNDDOGS__cl.mp3'))
+      bot.voice(97268125631774720).play_file('assets/chime.mp3')
     end
-  # end
+    bot.voice(97268125631774720).destroy
+  end
 end
 
 bot.run
