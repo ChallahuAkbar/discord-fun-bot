@@ -17,11 +17,13 @@ end
 
 bot.heartbeat do |_event|
   if Time.now.min.zero?
-    bot.voice_connect(97268125656940544)
-    Time.now.hour.times do
-      bot.voice(97268125631774720).play_file('assets/chime.mp3')
+    bot.servers.each do |server|
+      bot.voice_connect(server.channels.detect { |channel| channel.to_lowercase == 'general' })
+      Time.now.hour.times do
+        bot.voice(server).play_file('assets/chime.mp3')
+      end
+      bot.voice(server).destroy
     end
-    bot.voice(97268125631774720).destroy
   end
 end
 
