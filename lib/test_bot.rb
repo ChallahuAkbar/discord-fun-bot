@@ -19,8 +19,11 @@ bot.heartbeat do |_event|
   if Time.now.min.zero?
     bot.servers.each do |server|
       bot.voice_connect(server.channels.detect { |channel| channel.to_lowercase == 'general' })
-      Time.now.hour.times do
-        bot.voice(server).play_file('assets/chime.mp3')
+      hour = Time.now.hour % 12
+      if hour.zero?
+        12.times { bot.voice(server).play_file('assets/chime.mp3') }
+      else
+        hour.times { bot.voice(server).play_file('assets/chime.mp3') }
       end
       bot.voice(server).destroy
     end
