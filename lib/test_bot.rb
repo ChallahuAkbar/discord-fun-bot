@@ -17,7 +17,7 @@ end
 
 bot.heartbeat do |_event|
   if Time.now.min.zero?
-    bot.servers.each do |server|
+    bot.servers.each do |_id, server|
       bot.voice_connect(server.channels.detect { |channel| channel.to_lowercase == 'general' })
       hour = Time.now.hour % 12
       if hour.zero?
